@@ -6,6 +6,7 @@ const randomBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min
 
 function App() {
+  const audioSrc = `${import.meta.env.BASE_URL}keshi%20-%20Soft%20Spot%20.mp3`
   const [isOpen, setIsOpen] = useState(false)
   const [answer, setAnswer] = useState(null)
   const [dodge, setDodge] = useState({ x: 0, y: 0 })
@@ -170,7 +171,7 @@ function App() {
       </div>
       <audio
         ref={audioRef}
-        src="/keshi%20-%20Soft%20Spot%20.mp3"
+        src={audioSrc}
         preload="auto"
       />
     </div>
