@@ -6,7 +6,7 @@ const randomBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min
 
 function App() {
-  const audioSrc = `${import.meta.env.BASE_URL}keshi%20-%20Soft%20Spot%20.mp3`
+  const audioSrc = `${import.meta.env.BASE_URL}soft-spot.mp3`
   const [isOpen, setIsOpen] = useState(false)
   const [answer, setAnswer] = useState(null)
   const [dodge, setDodge] = useState({ x: 0, y: 0 })
@@ -69,10 +69,8 @@ function App() {
       <div className="scene">
         <header className="hero">
           <p className="eyebrow">A little Valentine note</p>
-          <h1>Dear Lady,</h1>
-          <p className="subhead">
-            I have a small question that feels big in my heart.
-          </p>
+          <h1>Hello,</h1>
+          <p className="subhead">A small question from a warm heart.</p>
         </header>
 
         {!isOpen && (
@@ -100,19 +98,13 @@ function App() {
         {isOpen && (
           <section className="card letter">
             <p className="letter-body">
-              Can I give you lilies for Valentine's? No pressure. Just a tiny
-              bouquet and a big smile.
+              Will you be my Valentine?
             </p>
             <p className="letter-body">
-              I like you and I'm willing to try either way. I'm not gonna be a
-              bother or whatnot that will stop you from stopping ur dreams, but
-              I want you to know that am here. Imma do the best in my ability to
-              pursue you while also not making you annoyed or something, I want to show 
-              that someone appreciates you. If am gonna get hurt, then so be it, 
-              but I have to try. I can't regret it. Maybe maybe someday, maybe there's a chance. 
-              ANW eto ang akingginawa na sinabi ko an hr ago I think
+              No pressure at all, just a simple ask and a big smile. If your
+              answer is yes, I'd be happy. If it's no, I'll still be grateful.
             </p>
-            <p className="letter-sign">— Dion</p>
+            <p className="letter-sign">— From Somone Who Really Likes You</p>
             <div className="button-row">
               <button
                 className={`btn ghost runner${isDodging ? ' is-dodging' : ''}`}
@@ -149,7 +141,7 @@ function App() {
               <span className="piece" />
             </div>
             <section className="card gift">
-              <p className="gift-title">A little gift for you, Lady</p>
+              <p className="gift-title">A little gift for you</p>
               <div className="gift-wrap">
                 <img
                   src="https://media.tenor.com/AsEFyg_BUMsAAAAe/steph-curry.png"
@@ -157,15 +149,13 @@ function App() {
                   loading="lazy"
                 />
               </div>
-              <p className="gift-note">
-                Yes? lezgoooooooooooooo.
-              </p>
+              <p className="gift-note">Thank you for making my day.</p>
             </section>
           </>
         )}
         {answer === 'no' && (
           <div className="response no">
-            All good. I will keep the lilies safe for later.
+            All good. Thanks for being kind.
           </div>
         )}
       </div>
