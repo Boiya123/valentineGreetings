@@ -11,7 +11,17 @@ function App() {
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
-    audio.play().catch(() => {})
+    
+    const handleLoadedMetadata = () => {
+      audio.currentTime = 35
+      audio.play().catch(() => {})
+    }
+    
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata)
+    
+    return () => {
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata)
+    }
   }, [])
 
   return (
@@ -65,7 +75,7 @@ function App() {
             <p className="letter-body">
               With warmth and gratitude
             </p>
-            <p className="letter-sign">— Made with care</p>
+            <p className="letter-sign">--Dion</p>
             <div className="bouquet">
               <div className="bouquet-wrap">
                 <div className="bouquet-sparkles" aria-hidden="true">
