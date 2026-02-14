@@ -43,8 +43,10 @@ function App() {
                 className="btn ghost"
                 onClick={() => {
                   if (audioRef.current) {
-                    audioRef.current.currentTime = 45
                     audioRef.current.play().catch(() => {})
+                    setTimeout(() => {
+                      audioRef.current.currentTime = 45
+                    }, 100)
                   }
                   setMusicReady(true)
                 }}
