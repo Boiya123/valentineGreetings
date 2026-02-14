@@ -3,7 +3,7 @@ import liliesBouquet from './assets/lilies-bouquet.jpg'
 import './App.css'
 
 function App() {
-  const audioSrc = `${import.meta.env.BASE_URL}magnolia.mp3`
+  const audioSrc = `${import.meta.env.BASE_URL}soft-spot.mp3`
   const [isOpen, setIsOpen] = useState(false)
   const [musicReady, setMusicReady] = useState(false)
   const audioRef = useRef(null)
