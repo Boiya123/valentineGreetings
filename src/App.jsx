@@ -11,16 +11,9 @@ function App() {
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
+    audio.addEventListener('canplay', () => {})
     
-    const handleCanPlay = () => {
-      audio.currentTime = 45
-    }
-    
-    audio.addEventListener('canplay', handleCanPlay)
-    
-    return () => {
-      audio.removeEventListener('canplay', handleCanPlay)
-    }
+    return () => {}
   }, [])
 
   return (
@@ -41,7 +34,11 @@ function App() {
               <button
                 className="btn ghost"
                 onClick={() => {
-                  audioRef.current?.play().catch(() => {})
+                  const audio = audioRef.current
+                  if (audio) {
+                    audio.currentTime = 45
+                    audio.play().catch(() => {})
+                  }
                   setMusicReady(true)
                 }}
               >
@@ -98,7 +95,7 @@ function App() {
       <footer className="footer" aria-hidden="true">
         <div className="footer-gif" />
       </footer>
-      <audio ref={audioRef} src={audioSrc} preload="metadata" />
+      <audio ref={audioRef} src={audioSrc} preload="auto" />
     </div>
   )
 }
