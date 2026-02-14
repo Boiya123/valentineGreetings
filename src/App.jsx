@@ -36,7 +36,7 @@ function App() {
                 onClick={() => {
                   const audio = audioRef.current
                   if (audio) {
-                    audio.currentTime = 37
+                    audio.currentTime = 37.5
                     audio.play().catch(() => {})
                   }
                   setMusicReady(true)
