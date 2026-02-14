@@ -20,8 +20,8 @@ function App() {
       <div className="scene">
         <header className="hero">
           <p className="eyebrow">A small missive</p>
-          <h1>Happy Valentine&apos;s, Pauline!</h1>
-          <p className="subhead">A small letter of affection.</p>
+          <h1>Happy Valentine&apos;s!</h1>
+          <p className="subhead">A heartfelt message for you.</p>
         </header>
 
         {!isOpen && (
@@ -51,14 +51,21 @@ function App() {
             <div className="blossom-overlay" aria-hidden="true" />
             <div className="letter-ornament" aria-hidden="true" />
             <p className="letter-body">
-              Here is my small way of still expressing my feelings for you, they ain&apos;t
-              the real ones but I still gotta make some effort. Goodluck ulet sa studies,
-              and hope ur doing good as always.
+              Here is my small way of still expressing my appreciation for all of you this
+              Valentine&apos;s. These words may be simple, but the gratitude behind them is real.
+              Thank you for being kind, supportive, and for bringing light into everyday moments.
+              Just like lilies, you carry a quiet kind of beauty and warmth that makes spaces
+              better just by being there.
             </p>
             <p className="letter-body">
-              Best wishes to you
+              Good luck again with your studies and everything you&apos;re working on. I hope
+              you&apos;re all doing well as always, and may today remind you that you are valued
+              and appreciated.
             </p>
-            <p className="letter-sign">— Dion</p>
+            <p className="letter-body">
+              With warmth and gratitude
+            </p>
+            <p className="letter-sign">— Made with care</p>
             <div className="bouquet">
               <div className="bouquet-wrap">
                 <div className="bouquet-sparkles" aria-hidden="true">
