@@ -12,15 +12,14 @@ function App() {
     const audio = audioRef.current
     if (!audio) return
     
-    const handleLoadedMetadata = () => {
+    const handleCanPlay = () => {
       audio.currentTime = 45
-      audio.play().catch(() => {})
     }
     
-    audio.addEventListener('loadedmetadata', handleLoadedMetadata)
+    audio.addEventListener('canplay', handleCanPlay)
     
     return () => {
-      audio.removeEventListener('loadedmetadata', handleLoadedMetadata)
+      audio.removeEventListener('canplay', handleCanPlay)
     }
   }, [])
 
@@ -42,12 +41,7 @@ function App() {
               <button
                 className="btn ghost"
                 onClick={() => {
-                  if (audioRef.current) {
-                    audioRef.current.play().catch(() => {})
-                    setTimeout(() => {
-                      audioRef.current.currentTime = 45
-                    }, 100)
-                  }
+                  audioRef.current?.play().catch(() => {})
                   setMusicReady(true)
                 }}
               >
@@ -104,7 +98,7 @@ function App() {
       <footer className="footer" aria-hidden="true">
         <div className="footer-gif" />
       </footer>
-      <audio ref={audioRef} src={audioSrc} preload="auto" />
+      <audio ref={audioRef} src={audioSrc} preload="metadata" />
     </div>
   )
 }
