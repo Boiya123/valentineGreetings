@@ -13,7 +13,7 @@ function App() {
     if (!audio) return
     
     const handleLoadedMetadata = () => {
-      audio.currentTime = 35
+      audio.currentTime = 45
       audio.play().catch(() => {})
     }
     
